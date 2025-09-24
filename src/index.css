@@ -1,0 +1,263 @@
+@import "tailwindcss";
+
+/* Base body styling */
+body {
+  font-family: "Inter", sans-serif;
+}
+
+/* Define beautiful animations */
+@keyframes bounce-in {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.25) translateY(-10px);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.6),
+      0 0 40px rgba(139, 92, 246, 0.4);
+  }
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* --- Enhanced Filestack Picker Customization --- */
+
+/* Main modal container with glassmorphism */
+.fsp-picker .fsp-modal-content {
+  @apply !shadow-2xl !rounded-2xl !backdrop-blur-sm;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Modal Header with gradient */
+.fsp-picker .fsp-header {
+  @apply !bg-gradient-to-r !from-violet-50 !via-purple-50 !to-fuchsia-50 !text-slate-800 !border-b !border-purple-200/50 !rounded-t-2xl;
+  background-size: 200% 200%;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+/* Primary 'Upload' button */
+.fsp-picker .fsp-button--primary {
+  @apply !bg-gradient-to-r !from-violet-600 !to-purple-600 !text-white !border-none !rounded-xl !shadow-lg !transition-all !duration-500 !ease-out;
+  background-size: 200% 200%;
+}
+
+.fsp-picker .fsp-button--primary:hover {
+  @apply !-translate-y-2 !shadow-2xl !scale-110;
+  background: linear-gradient(135deg, #8b5cf6, #a855f7, #d946ef);
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Cancel button */
+.fsp-picker .fsp-button--cancel {
+  @apply !bg-gradient-to-r !from-slate-100 !to-slate-200 !text-slate-700 !border !border-slate-300 !rounded-xl !shadow-sm !transition-all !duration-300 !ease-in-out;
+}
+
+.fsp-picker .fsp-button--cancel:hover {
+  @apply !bg-gradient-to-r !from-slate-200 !to-slate-300 !text-slate-900 !scale-105 !shadow-lg !ring-2 !ring-purple-300 !ring-offset-2;
+}
+
+/* Left sidebar */
+.fsp-picker .fsp-source-list {
+  @apply !bg-gradient-to-b !from-slate-50 !to-slate-100 !border-r !border-purple-200/50;
+  background-image: linear-gradient(
+    135deg,
+    rgba(139, 92, 246, 0.05) 0%,
+    rgba(168, 85, 247, 0.05) 100%
+  );
+}
+
+.fsp-picker .fsp-source-list__item {
+  @apply !transition-all !duration-500 !ease-out !relative !overflow-hidden !border-l-4 !border-transparent;
+}
+
+.fsp-picker .fsp-source-list__item::before {
+  content: "";
+  @apply !absolute !inset-0 !bg-gradient-to-r !from-violet-500/10 !to-purple-500/10 !translate-x-full !transition-transform !duration-500;
+}
+
+.fsp-picker .fsp-source-list__item:hover::before {
+  @apply !translate-x-0;
+}
+
+.fsp-picker .fsp-source-list__item--active {
+  @apply !bg-gradient-to-r !from-violet-100 !to-purple-100 !text-violet-800 !font-bold !border-l-violet-500;
+  animation: slide-in 0.5s ease-out;
+  box-shadow: inset 0 0 20px rgba(139, 92, 246, 0.1);
+}
+
+.fsp-picker .fsp-source-list__item:hover {
+  @apply !bg-gradient-to-r !from-violet-50 !to-purple-50 !translate-x-2 !font-semibold !text-violet-700 !border-l-violet-400;
+  animation: slide-in 0.3s ease-out;
+}
+
+/* Drop Area */
+.fsp-picker .fsp-drop-area {
+  @apply !border-2 !border-dashed !border-violet-300 !bg-gradient-to-br !from-violet-50/50 !to-purple-50/50 !rounded-2xl !transition-all !duration-700 !ease-out !relative !overflow-hidden;
+  background-image: radial-gradient(
+    circle at 50% 50%,
+    rgba(139, 92, 246, 0.1) 0%,
+    transparent 50%
+  );
+}
+
+.fsp-picker .fsp-drop-area::before {
+  content: "";
+  @apply !absolute !inset-0 !bg-gradient-to-r !from-violet-200/20 !via-purple-200/20 !to-fuchsia-200/20 !opacity-0 !transition-all !duration-700;
+  background-size: 200% 200%;
+}
+
+.fsp-picker .fsp-drop-area:hover {
+  @apply !border-solid !border-violet-500 !bg-gradient-to-br !from-violet-100/80 !to-purple-100/80 !scale-105 !shadow-2xl;
+  animation: float 3s ease-in-out infinite;
+}
+
+.fsp-picker .fsp-drop-area:hover::before {
+  @apply !opacity-100;
+  animation: shimmer 2s ease-in-out infinite;
+}
+
+/* Title Animation */
+.fsp-picker .fsp-drop-area__title {
+  @apply !transition-all !duration-500 !relative;
+}
+
+.fsp-picker .fsp-drop-area:hover .fsp-drop-area__title {
+  animation: bounce-in 0.6s ease-in-out;
+  @apply !text-violet-600 !font-bold;
+  text-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+}
+
+/* Button Icon */
+.fsp-picker .fsp-drop-area__button {
+  @apply !relative !text-violet-700 !bg-gradient-to-r !from-white !to-violet-50 !rounded-xl !shadow-xl !transition-all !duration-500 !ease-out !border !border-violet-200/50;
+}
+
+.fsp-picker .fsp-drop-area__button:hover {
+  @apply !shadow-2xl !-translate-y-2 !scale-110 !ring-4 !ring-violet-300/50 !ring-offset-4 !pl-16;
+  background: linear-gradient(135deg, #ffffff, #f3e8ff, #e879f9);
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.fsp-picker .fsp-drop-area__button::before {
+  content: "";
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%238b5cf6'%3e%3cpath d='M10 4H4c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8c0-1.11-.89-2-2-2h-8l-2-2z'/%3e%3c/svg%3e");
+  @apply !absolute !top-1/2 !left-4 !w-7 !h-7 !-translate-y-1/2 !bg-no-repeat !bg-center !bg-contain !opacity-0 !transition-all !duration-500 !-translate-x-6 !scale-75;
+}
+
+.fsp-picker .fsp-drop-area__button:hover::before {
+  @apply !opacity-100 !translate-x-0 !scale-100;
+  filter: drop-shadow(0 0 8px rgba(139, 92, 246, 0.4));
+}
+
+/* Subtitle Icon */
+.fsp-picker .fsp-drop-area__subtitle {
+  @apply !text-violet-600 !font-medium !transition-all !duration-700 !relative;
+}
+
+.fsp-picker .fsp-drop-area__subtitle::after {
+  content: "";
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23a855f7'%3e%3cpath d='M13.6,1.6l-2.9,15.3l-3.3-3.4l-3.2,8.4l8.3-3.2l-3.4-3.3L13.6,1.6z'/%3e%3c/svg%3e");
+  @apply !absolute !top-1/2 !left-1/2 !w-12 !h-12 !-translate-x-1/2 !-translate-y-1/2 !bg-no-repeat !bg-center !bg-contain !opacity-0 !transition-all !duration-700 !scale-50;
+  filter: drop-shadow(0 0 10px rgba(168, 85, 247, 0.5));
+}
+
+.fsp-picker .fsp-drop-area:hover .fsp-drop-area__subtitle {
+  @apply !text-transparent;
+}
+
+.fsp-picker .fsp-drop-area:hover .fsp-drop-area__subtitle::after {
+  @apply !opacity-100 !scale-125;
+  animation: float 2s ease-in-out infinite;
+}
+
+/* Footer and Badge */
+.fsp-picker .fsp-footer {
+  @apply !bg-gradient-to-r !from-slate-50/90 !via-violet-50/90 !to-purple-50/90 !backdrop-blur-lg !border-t !border-violet-200/50 !p-4 !rounded-b-2xl;
+}
+
+.fsp-picker .fsp-footer .fsp-button--cancel {
+  @apply !bg-gradient-to-r !from-white !to-slate-50 !text-slate-600 !border !border-slate-300 !rounded-xl !shadow-md !transition-all !duration-500 !ease-out;
+}
+
+.fsp-picker .fsp-footer .fsp-button--cancel:hover {
+  @apply !bg-gradient-to-r !from-slate-50 !to-slate-100 !text-slate-800 !scale-105 !ring-2 !ring-violet-300 !ring-offset-2 !shadow-xl;
+}
+
+.fsp-picker .fsp-footer .fsp-button-upload .fsp-badge {
+  @apply !bg-gradient-to-r !from-violet-500 !to-purple-500 !text-white !font-bold !rounded-full !text-xs !px-3 !py-2 !ml-3 !transition-all !duration-500 !transform-gpu !shadow-lg;
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+}
+
+.fsp-picker .fsp-footer .fsp-button-upload:hover .fsp-badge {
+  @apply !scale-125 !rotate-12;
+  background: linear-gradient(135deg, #8b5cf6, #a855f7, #d946ef);
+  animation: pulse-glow 1.5s ease-in-out infinite;
+  box-shadow: 0 8px 25px rgba(139, 92, 246, 0.5);
+}
+
+/* Summary Remove Button */
+.fsp-picker .fsp-summary__action--remove {
+  @apply !transition-all !duration-500 !rounded-full;
+  background: linear-gradient(
+    135deg,
+    rgba(239, 68, 68, 0.1),
+    rgba(220, 38, 38, 0.1)
+  );
+}
+
+.fsp-picker .fsp-summary__action--remove:hover {
+  @apply !scale-125 !ring-4 !ring-red-400/50 !shadow-lg;
+  background: linear-gradient(
+    135deg,
+    rgba(239, 68, 68, 0.2),
+    rgba(220, 38, 38, 0.2)
+  );
+  animation: pulse-glow 1.5s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .fsp-drop-area,
+  .fsp-button--primary {
+    animation: none !important;
+    transition: none !important;
+  }
+}
