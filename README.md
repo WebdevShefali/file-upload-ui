@@ -25,7 +25,7 @@ It demonstrates how to build a clean, accessible upload component with cloud sto
    ```bash
    git clone <repository-url>
    cd file-upload-ui
-  ```
+   ```
 
 2. **Install Dependencies**
 
