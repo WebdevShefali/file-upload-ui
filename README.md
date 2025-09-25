@@ -53,9 +53,8 @@ That’s it! The demo will be running locally.
 
 ## Resources for Further Learning
 
-- [WebAIM: Accessible File Uploads](https://webaim.org/techniques/fileupload/)
-- [MDN: Accessibility Best Practices](https://developer.mozilla.org/en-US/docs/Learn/Accessibility)
+- [GitHub Repository with Complete Code](https://github.com/WebdevShefali/file-upload-ui)
+- [Filestack Documentation](https://www.filestack.com/docs/)
+- [MDN: Accessibility Best Practices](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Accessibility)
 - [MDN Web Docs: File API](https://developer.mozilla.org/en-US/docs/Web/API/File)
 - [WCAG 2.1 Guidelines](https://www.w3.org/WAI/WCAG21/quickref/)
-- [React Testing Library Documentation](https://testing-library.com/docs/react-testing-library/intro/)
-- [Accessibility Testing Tools](https://www.a11yproject.com/resources/#testing-tools)
