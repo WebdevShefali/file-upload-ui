@@ -7,14 +7,14 @@ It demonstrates how to build a clean, accessible upload component with cloud sto
 
 ## Features
 
-- **Multiple Sources**: Upload from local files, Google Drive, Dropbox, OneDrive, GitHub, and more.  
-- **File Restrictions**: Accepts only images and PDFs (configurable).  
-- **Batch Uploads**: Upload up to 5 files at once.  
-- **Accessible by Design**:  
-  - Screen-reader friendly status updates with `aria-live`.  
-  - Error messages announced automatically.  
-  - Full keyboard navigation in Filestack modal (`Tab`, `Shift+Tab`, `Enter`, `Space`).  
-- **Responsive UI**: Styled with Tailwind for a modern look.  
+- **Multiple Sources**: Upload from local files, Google Drive, Dropbox, OneDrive, GitHub, and more.
+- **File Restrictions**: Accepts only images and PDFs (configurable).
+- **Batch Uploads**: Upload up to 5 files at once.
+- **Accessible by Design**:
+  - Screen-reader friendly status updates with `aria-live`.
+  - Error messages announced automatically.
+  - Full keyboard navigation in Filestack modal (`Tab`, `Shift+Tab`, `Enter`, `Space`).
+- **Responsive UI**: Styled with Tailwind for a modern look.
 
 ---
 
@@ -59,4 +59,3 @@ That’s it! The demo will be running locally.
 - [WCAG 2.1 Guidelines](https://www.w3.org/WAI/WCAG21/quickref/)
 - [React Testing Library Documentation](https://testing-library.com/docs/react-testing-library/intro/)
 - [Accessibility Testing Tools](https://www.a11yproject.com/resources/#testing-tools)
-

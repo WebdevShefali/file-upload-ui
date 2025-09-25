@@ -46,6 +46,7 @@ const FileUpload: React.FC = () => {
         <main className="p-8 border-2 border-dashed rounded-2xl bg-slate-50 flex flex-col justify-center items-center min-h-[300px]">
           <button
             onClick={openPicker}
+            aria-label="Upload files using the file picker"
             className="cursor-pointer bg-gradient-to-r from-sky-500 to-indigo-500 text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 ease-in-out shadow-lg hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-offset-2 focus:ring-sky-300 transform hover:-translate-y-2 hover:scale-110 hover:rotate-1 hover:from-indigo-600 hover:to-sky-600 active:scale-95"
           >
             Upload Files
